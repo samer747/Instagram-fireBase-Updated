@@ -56,15 +56,7 @@ class MainTabBarViewController : UITabBarController,UITabBarControllerDelegate{
             }
             return
         }
-        setupProfileImage()
         setupViewControllers()
-    }
-    fileprivate func setupProfileImage(){
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        Database.fetchUserWithID(uid: uid) { (user) in
-            self.profileImageSelected.loadImage(url: user.profileImageUrl)
-            self.profileImageUnSelected.loadImage(url: user.profileImageUrl)
-        }
     }
     func setupViewControllers(){
         self.delegate = self
