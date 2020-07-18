@@ -9,9 +9,9 @@
 import UIKit
 
 class SearchCell: UICollectionViewCell {
-    var users : User? {
+    var user : User? {
         didSet{
-            guard let users = users else { return }
+            guard let users = user else { return }
             profileImage.loadImage(url: users.profileImageUrl )
             textLable.text = users.username
             postsLable.text = "\(users.numOfPosts!) Posts"

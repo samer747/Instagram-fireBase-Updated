@@ -12,22 +12,6 @@ import Firebase
 class MainTabBarViewController : UITabBarController,UITabBarControllerDelegate{
     
     
-    
-    lazy var profileImageSelected : CustomImageView = {
-        let image = CustomImageView()
-        image.layer.borderColor = .init(srgbRed: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-        image.layer.borderWidth = 2
-        image.layer.cornerRadius = 10
-        
-        return image
-    }()
-    lazy var profileImageUnSelected : CustomImageView = {
-        let image = CustomImageView()
-        image.layer.cornerRadius = 10
-        return image
-    }()
-    
-    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let index = viewControllers?.firstIndex(of: viewController)
         if index == 2 {
@@ -63,9 +47,8 @@ class MainTabBarViewController : UITabBarController,UITabBarControllerDelegate{
         tabBar.isTranslucent = false
         tabBar.barTintColor = .white
         //ProfileTap
-        let profileNavController = UINavigationController(rootViewController: UserProfileTab(collectionViewLayout: UICollectionViewFlowLayout()))
-        profileNavController.tabBarItem.image = profileImageUnSelected.image
-        profileNavController.tabBarItem.selectedImage = profileImageSelected.image
+        let layoutz = UICollectionViewFlowLayout()
+        let profileNavController = setupNavControllers(selectedImageName: "homeUnselected", UnselectedImageName: "homeSelected", rootCollectionView: HomeViewController(collectionViewLayout: layoutz))
         
         //HomeTap
         let layoutx = UICollectionViewFlowLayout()

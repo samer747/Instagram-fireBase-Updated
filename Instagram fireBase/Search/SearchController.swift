@@ -89,7 +89,7 @@ class SearchController: UICollectionViewController ,UICollectionViewDelegateFlow
     //MARK: -------------- CELL SETUP -----------------
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "CellID", for: indexPath) as! SearchCell
-        cell.users = filteredUsers[indexPath.item]
+        cell.user = filteredUsers[indexPath.item]
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
