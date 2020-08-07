@@ -154,7 +154,6 @@ class SignUpController: UIViewController  , UIImagePickerControllerDelegate , UI
                 return
             }
             ///user registered successfully
-            print("signUP succesfully with ID : ",res?.user.uid ?? "mfe4 id")
             guard let userID = res?.user.uid else { return }
             guard let image = self.plusPhotoButton.imageView?.image else {return}        //hna5od el sora mn el imageview nfsaha
             let imageName = NSUUID().uuidString                                               // hn3ml random id lel user
@@ -165,7 +164,7 @@ class SignUpController: UIViewController  , UIImagePickerControllerDelegate , UI
                     print("faild1",error)
                     return
                 }
-                print(metadate ?? "Succses")//succses
+               //succses
                 ref.downloadURL { (url, err) in//method btrg3lna el download url
                     if let err = err//error
                     {   print(err)

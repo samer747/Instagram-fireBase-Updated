@@ -116,7 +116,7 @@ class SignInController: UIViewController {
                 print("Error : ",err)
                 return
             }
-            print("Seccsefully Loged In With User : ",res?.user.uid ?? "Empty result")
+            
            self.dismiss(animated: true, completion: nil)
             guard let mainTabBarController = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarViewController else { return }
             mainTabBarController.setupViewControllers()
